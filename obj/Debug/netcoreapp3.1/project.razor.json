@@ -1,0 +1,16 @@
+{
+  "FilePath": "/Users/user/webapi_tutorial/web-test-api/web-test-api.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": null,
+  "RootNamespace": "web_test_api",
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
