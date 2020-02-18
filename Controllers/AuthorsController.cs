@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using web_test_api.Model;
-// using System.Dynamic;
-// using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Microsoft.AspNetCore.JsonPatch;
 // using Bcrypt.Net;
 
 
@@ -73,10 +73,12 @@ namespace web_test_api.Controllers
             return Ok(Authors.RemoveAll(i => i.Id == id));
         }
 
-        // [HttpPatch("{id}")]
-        // public IActionResult PatchAuthor(AuthorRequest Authors){
-        //     return Ok(Authors.Append(i => i.Id == Authors.Id));
-        // }
+        [HttpPatch("{id}")]
+        public IActionResult PatchAuthor(int id, [FromBody]JsonPatchDocument<AuthorRequest> patch){
+            patch.ApplyTo(Authors.Find(i => i.Id == id));
+
+            return Ok(Authors.Find(i => i.Id == id));
+        }
 
     }
 }

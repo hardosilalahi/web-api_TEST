@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using web_test_api.Middleware;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 namespace web_test_api
 {
@@ -27,6 +28,7 @@ namespace web_test_api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddControllersWithViews().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

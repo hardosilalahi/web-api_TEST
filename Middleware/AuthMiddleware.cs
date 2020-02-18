@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 
+
 namespace web_test_api.Middleware
 {
     public class AuthMiddleware
@@ -18,11 +19,13 @@ namespace web_test_api.Middleware
             if(context.Request.Headers["Authorization"] == "hello"){
                 await _next(context);
             }
+            else{
+                var text = "takbisa";
 
-            var text = "Unauthorized";
+                var data = System.Text.Encoding.UTF8.GetBytes(text);
+                await context.Response.Body.WriteAsync(data, 0, data.Length);
+            }
 
-            var data = System.Text.Encoding.UTF8.GetBytes(text);
-            await context.Response.Body.WriteAsync(data, 0, data.Length);
         }
     }
     
