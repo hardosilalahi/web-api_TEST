@@ -55,15 +55,7 @@ namespace web_test_api.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddUser(AuthorRequest Authors){
-            var authorAdd = new AuthorRequest(){
-                Id = 4,
-                Username = Authors.Username,
-                Password = Authors.Name,
-                Salt = Bcrypt.HashPassword(Password),
-                Email = Authors.Email,
-                Profile = Authors.Profile
-            };
+        public IActionResult AddUser(AuthorRequest authorAdd){
             Authors.Add(authorAdd);
 
             return Ok(Authors);

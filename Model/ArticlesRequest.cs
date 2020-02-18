@@ -10,12 +10,12 @@ namespace web_test_api.Model
         public string Email { get; set; }
         public string Profile { get; set; }
     }
-    
+
     public class PostsRequest{
         public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public string Tags { get; set; }
+        public List<string> Tags { get; set; }
         public bool Status { get; set; }
         public DateTime Create_Time { get; set; }
         public DateTime Update_Time { get; set; }

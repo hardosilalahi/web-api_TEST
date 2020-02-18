@@ -70,17 +70,7 @@ namespace web_test_api.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddUser(PostsRequest Posts){
-            var postsAdd = new PostsRequest(){
-                Id = 4,
-                Title = Posts.Title,
-                Content = Posts.Content,
-                Tags = Posts.Tags,
-                Status = Posts.Status,
-                Create_Time = DateTime.Now,
-                Update_Time = DateTime.Now,
-                Author_Id = 2
-            };
+        public IActionResult AddUser(PostsRequest postsAdd){
             Posts.Add(postsAdd);
 
             return Ok(Posts);
@@ -98,7 +88,7 @@ namespace web_test_api.Controllers
 
         // [HttpPatch("{id}")]
         // public IActionResult PatchAuthor(PostsRequest Authors){
-        //     return Ok(Authors.Append(i => i.Id == Authors.Id));
+        //     return Ok(Posts.Append(i => i.Id == Authors.Id));
         // }
 
     }

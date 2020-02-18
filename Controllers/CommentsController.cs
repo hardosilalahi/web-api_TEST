@@ -61,17 +61,7 @@ namespace web_test_api.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddComment(CommentRequest Comments){
-            var commentsAdd = new CommentRequest(){
-                Id = 4,
-                Content = Comments.Content,
-                Status = Comments.Status,
-                Create_Time = DateTime.Now,
-                Author_Id = 2,
-                Email = Comments.Email,
-                Url = Comments.Url,
-                Post_Id = 3
-            };
+        public IActionResult AddComment(CommentRequest commentsAdd){
             Comments.Add(commentsAdd);
 
             return Ok(Comments);
