@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using web_test_api.Model;
-using Bcrypt.Net;
+// using Bcrypt.Net;
 
 
 namespace web_test_api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class CommentsController
+    [Route("comments")]
+    public class CommentsController : ControllerBase
     {
         private static List<CommentRequest> Comments = new List<CommentRequest>(){
             new CommentRequest(){
@@ -57,7 +57,7 @@ namespace web_test_api.Controllers
 
         [HttpGet]
         public IActionResult GetComments(){
-            return Ok(status = "success", message = "success", data = Comments);
+            return Ok(new {status = "success", message = "success", data = Comments});
         }
 
         [HttpPost]

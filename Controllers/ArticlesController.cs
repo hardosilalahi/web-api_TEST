@@ -6,21 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using web_test_api.Model;
-using Bcrypt.Net;
+// using System.Dynamic;
+// using Microsoft.AspNetCore.JsonPatch;
+// using Bcrypt.Net;
 
 
 namespace web_test_api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class ArticlesController
+    [Route("authors")]
+    public class AuthorsController : ControllerBase
     {
         private static List<AuthorRequest> Authors = new List<AuthorRequest>(){
             new AuthorRequest(){
                 Id = 1,
                 Username = "spongbobbybola",
                 Password = "berburuuburubur",
-                Salt = $"{Bcrypt.HashPassword(Password)}",
+                Salt = "sdgfjkasgdfgwuygr",
                 Email = "goofygoober@bottom.net",
                 Profile = "Berburu Ubur-ubur"
             },
@@ -28,7 +30,7 @@ namespace web_test_api.Controllers
                 Id = 2,
                 Username = "petrikstar",
                 Password = "batunisan",
-                Salt = $"{Bcrypt.HashPassword(Password)}",
+                Salt = "ashfgkjshbgdgsbfhgbs",
                 Email = "goofymber@bottom.net",
                 Profile = "Mengganggu Squidward"
             },
@@ -36,26 +38,26 @@ namespace web_test_api.Controllers
                 Id = 3,
                 Username = "squidwardtentakel",
                 Password = "klarinetidola",
-                Salt = Bcrypt.HashPassword(Password),
+                Salt = "sfgafhetjhethg",
                 Email = "belomgajian@bottom.net",
                 Profile = "Hidup santai bermain klarinet"
             }
         };
 
-        private readonly ILogger<ArticlesController> _logger;
+        private readonly ILogger<AuthorsController> _logger;
 
-        public ArticlesController(ILogger<ArticlesController> logger)
+        public AuthorsController(ILogger<AuthorsController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
         public IActionResult GetAuthors(){
-            return Ok(status = "success", message = "success", data = Authors);
+            return Ok(new {status = "success", message = "success", data = Authors});
         }
 
         [HttpPost]
-        public IActionResult AddUser(AuthorRequest authorAdd){
+        public IActionResult AddAuthor(AuthorRequest authorAdd){
             Authors.Add(authorAdd);
 
             return Ok(Authors);

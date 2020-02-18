@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using web_test_api.Middleware;
 
 namespace web_test_api
 {
@@ -36,7 +37,11 @@ namespace web_test_api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
+
+            // app.UseMiddleware<AuthMiddleware>();
+
+            app.UseAuth();
 
             app.UseRouting();
 
@@ -46,6 +51,9 @@ namespace web_test_api
             {
                 endpoints.MapControllers();
             });
+
+
         }
+        
     }
 }

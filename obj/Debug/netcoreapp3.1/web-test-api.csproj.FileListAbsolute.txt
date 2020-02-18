@@ -16,3 +16,6 @@
 /Users/user/webapi_tutorial/web-test-api/obj/Debug/netcoreapp3.1/web-test-api.RazorTargetAssemblyInfo.cache
 /Users/user/webapi_tutorial/web-test-api/obj/Debug/netcoreapp3.1/web-test-api.dll
 /Users/user/webapi_tutorial/web-test-api/obj/Debug/netcoreapp3.1/web-test-api.pdb
+/Users/user/webapi_tutorial/web-test-api/bin/Debug/netcoreapp3.1/package-lock.json
+/Users/user/webapi_tutorial/web-test-api/bin/Debug/netcoreapp3.1/BCrypt.Net-Next.dll
+/Users/user/webapi_tutorial/web-test-api/obj/Debug/netcoreapp3.1/web-test-api.csproj.CopyComplete

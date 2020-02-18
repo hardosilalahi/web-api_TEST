@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using web_test_api.Model;
-using Bcrypt.Net;
+// using Bcrypt.Net;
 
 
 namespace web_test_api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class PostsController
+    [Route("posts")]
+    public class PostsController : ControllerBase
     {
         private static List<PostsRequest> Posts = new List<PostsRequest>(){
             new PostsRequest(){
@@ -66,7 +66,7 @@ namespace web_test_api.Controllers
 
         [HttpGet]
         public IActionResult GetPosts(){
-            return Ok(status = "success", message = "success", data = Posts);
+            return Ok(new {status = "success", message = "success", data = Posts});
         }
 
         [HttpPost]
