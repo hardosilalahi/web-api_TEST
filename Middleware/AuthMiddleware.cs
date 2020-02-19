@@ -54,10 +54,10 @@ namespace web_test_api.Middleware
     public class Logger{
         public static string Message;
         
-        public static void SaveAllLog(string statusCode, string httpMethod, string Time, string httpAddress, string requestPath )
+        public static void SaveAllLog(string statusCode, string httpMethod, string Time, string requestPath ,string httpAddress)
         {
             File.AppendAllText(@"/Users/user/webapi_tutorial/web-test-api/app.log", $"[{DateTime.Now}] Started {httpMethod} {requestPath} for {httpAddress}  \n");
-            File.AppendAllText(@"/Users/user/webapi_tutorial/web-test-api/app.log", $"[{DateTime.Now}] Completed {statusCode} on {httpAddress}{requestPath} in {Time}  \n");
+            File.AppendAllText(@"/Users/user/webapi_tutorial/web-test-api/app.log", $"[{DateTime.Now}] Completed {statusCode} on {httpAddress}{requestPath} in {Time}ms  \n");
         }
 
         public static void PopulateLog(string message)

@@ -26,6 +26,7 @@
         "dependencies": {
           "BCrypt.Net-Next": "3.2.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.1",
+          "Serilog": "2.9.1-dev-01154",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -382,6 +383,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Serilog/2.9.1-dev-01154": {
+        "runtime": {
+          "lib/netstandard2.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.9.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2125,6 +2137,13 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "Serilog/2.9.1-dev-01154": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lvPN53mbaD4zaQpwUrgxS15W4Uvh55LUtLcD8MMZmC0FkK9OxDiYsn1DA20O+CNjNECC/rqF/PRq1gJDwPAodQ==",
+      "path": "serilog/2.9.1-dev-01154",
+      "hashPath": "serilog.2.9.1-dev-01154.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",
