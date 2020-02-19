@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-using System;
 namespace web_test_api.Model
 {
     public class AuthorRequest
